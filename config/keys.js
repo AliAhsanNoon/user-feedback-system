@@ -4,4 +4,3 @@ if(process.env.NODE_ENV === 'production'){
 else{
     module.exports = require('./dev')
 }
-//mongooseURI:"mongodb+srv://superuser:superuser@mailcluster-khot6.mongodb.net/<dbname>?retryWrites=true&w=majority"
