@@ -28,7 +28,7 @@ require("./routes/authRoutes")(app);
 const PORT = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
-  res.send("<h1>React With Nodejs</h1>");
+  res.send("<h1>React With Nodejs</h1><br> <a href=\"/auth/google \">Sign In With google</a>");
 });
 
 app.listen(PORT);
