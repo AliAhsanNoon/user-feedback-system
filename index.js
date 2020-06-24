@@ -5,6 +5,7 @@ const cookieSession = require("cookie-session");
 const bodyParser = require("body-parser");
 
 require("./models/User");
+require("./models/Survey");
 require("./services/passport");
 const app = express();
 app.use(bodyParser.json());
@@ -25,9 +26,10 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
-
+//const survey ={title : 'React With Nodejs' , subject:'Learn to build mail system', recipients:'noonaliahsan@gmail.com', body:'Feedback System with Nodejs and react learning'}
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
+require("./routes/surveyRoutes")(app);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
